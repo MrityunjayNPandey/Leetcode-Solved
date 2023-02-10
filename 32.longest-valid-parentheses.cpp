@@ -17,11 +17,13 @@ public:
       else {
         if (!st.empty() && st.top().first == '(') {
           st.pop();
-          if (!st.empty() && ans < j - st.top().second + 1) {
-            ans = max(ans, j - st.top().second + 1);
-          } else {
-            ans = max(ans, j - 1);
+          if(st.empty()) {
+            ans = max(ans, j + 1);
+            continue;
           }
+          if (ans < j - st.top().second + 1) {
+            ans = max(ans, j - st.top().second);
+          } 
         } else {
           st.push({s[j], j});
         }
