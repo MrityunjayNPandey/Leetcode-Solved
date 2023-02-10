@@ -12,6 +12,7 @@ public:
     vector<vector<int>> dp(n, vector<int>(m, 1e5));
     dp[0][0] = grid[0][0];
     for (int i = 0; i < n; i++) {
+    
       for (int j = 0; j < m; j++) {
         if (i) {
           dp[i][j] = dp[i - 1][j] + grid[i][j];
