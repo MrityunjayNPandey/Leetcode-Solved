@@ -57,7 +57,7 @@ public:
     }
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
-        ans = max(ans, get<0>(vv[i][j]) * (i - get<1>(vv[i][j]) + get<2>(vv[i][j]) - j - 1));
+        ans = max(ans, get<0>(vv[i][j]) * (get<2>(vv[i][j]) - get<1>(vv[i][j]) - 1));
       }
     }
     return ans;
